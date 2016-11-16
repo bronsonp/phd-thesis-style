@@ -1,0 +1,490 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[book]{JCU Thesis}
+# JCU Thesis textclass
+
+# By Chris Jordan and Bronson Philippa
+# 2010 & 2011
+
+# Based on "UNSW Thesis" textclass by Mark Reid, which was based on
+# the "book (AMS)" textclass by David L. Johnson and others.
+
+# Much of the code in the preamble is borrowed from:
+#   http://www.ctan.org/tex-archive/macros/latex/contrib/adfathesis/adfathesis.dtx
+
+# General textclass parameters
+# Description          "thesis"
+Columns			1
+Sides			1
+PageStyle		Headers
+MaxCounter		Counter_Chapter
+
+ClassOptions
+  FontSize   10|11|12
+End
+
+# Standard style definition
+Style Standard
+  Margin  		Static
+  LatexType 		Paragraph
+  LatexName 		dummy
+  ParIndent		MM
+  ParSkip 		0.4
+  Align 		Block
+  AlignPossible 	Block, Left, Right, Center
+  LabelType 		No_Label
+End
+
+############### Title Page.
+Style Title
+  LatexType		Command
+  LatexName		title
+  InTitle		1
+  NewLine		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"Title:"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style Author
+  LatexType		Command
+  LatexName		author
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"Author:"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style AuthorTitlePage
+  LatexType		Command
+  LatexName		authortitlepage
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"Author (For Title Page):"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style ShortTitle
+  LatexType		Command
+  LatexName		shorttitle
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"Short Title (For Page Headers):"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style Abbreviation
+  LatexType		Command
+  LatexName		abbrev
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"Abbreviation:"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style University
+  LatexType		Command
+  LatexName		university
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"University:"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style School
+  LatexType		Command
+  LatexName		school
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"School:"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style Degree
+  LatexType		Command
+  LatexName		degreetype
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"Degree:"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style SubmitDate
+  LatexType		Command
+  LatexName		submitdate
+  InTitle		1
+  Margin		Dynamic
+  LabelType		Static
+  LabelString		"Submit Date:"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style BeginFrontMatter
+  LatexType		Command
+  LatexName		beginfm
+  InTitle		0
+  Margin		Dynamic
+  LabelType		Static
+  KeepEmpty		1
+  LabelString		"Begin Front Matter"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+Style EndFrontMatter
+  LatexType		Command
+  LatexName		finishfm
+  InTitle		0
+  Margin		Dynamic
+  LabelType		Static
+  KeepEmpty		1
+  LabelString		"End Front Matter"
+  LabelFont
+    Series		Bold
+    Size		Normal
+  EndFont
+End
+
+
+############### Sections.
+
+Input stdsections.inc
+
+# Redefine some of the section styles.
+Style Section
+  Align			Left
+  AlignPossible		Block, Center, Left
+
+  # standard font definition
+  Font
+    Series 		Medium
+    Shape		Smallcaps
+    Size		Large
+  EndFont
+End
+
+# Subsection-numbered style definition
+Style Subsection
+  # standard font definition
+  Font
+    Series 		Bold
+    Size		Normal
+  EndFont
+End
+
+# Subsubsection-numbered style definition
+Style Subsubsection
+  # standard font definition
+  Font
+    Shape 		Italic
+    Size		Normal
+  EndFont
+End
+
+# then define the unumbered sections, based on the numbered ones.
+Input stdstarsections.inc
+
+Input lyxmacros.inc
+NoStyle Address
+
+Input amsdefs.inc
+
+Input stdlayouts.inc
+NoStyle Verse    # Although mathematicians tend to be poets at times,
+                 # we don't need this.
+
+Input stdlists.inc
+Input stdfloats.inc
+
+############# Algorithm 2e Style
+Float
+  Type                  algorithm2e
+  GuiName               "Algorithm 2e"
+  Placement             tbp
+  Extension             loa
+  NumberWithin          none
+  Style                 ruled
+  ListName              "List of Algorithms"
+  LaTeXBuiltin          false
+End
+
+Input stdcounters.inc
+
+############### Verbatim environment using fancyvrb for code
+Style Code
+  LatexType		Environment
+  LatexName		Verbatim
+  LatexParam	"[fontsize=\small]" #,xleftmargin=2em,xrightmargin=2em]"
+  PassThru		1
+  NewLine		0
+  FreeSpacing   1
+  LeftMargin	MMM
+  RightMargin   MMM
+  ParSkip		0.0
+  TopSep		1.0
+  BottomSep		1.0
+  Align			Left
+  AlignPossible	Left
+
+  # standard font definition
+  Font
+    Family		Typewriter
+  EndFont
+
+  Preamble
+\usepackage{fancyvrb}
+  EndPreamble
+
+End
+
+########### Document Preamble
+# Defines margins, etc
+Preamble
+
+\usepackage{phdthesis}
+
+\newcommand{\setpagesize}{
+    \setlength{\oddsidemargin}	{1.5cm}
+    \setlength{\evensidemargin} {1.5cm}    % was 0cm
+%    \setlength{\hoffset} 	{0cm}
+%    \setlength{\voffset}	{-2cm}
+%    \setlength{\marginparwidth} {40\p@}
+%    \setlength{\marginparsep}   {10\p@}     % was 0pt
+%    \setlength{\marginparwidth} {1.5cm}
+%    \setlength{\marginparsep}   {1.5cm}
+%    \setlength{\topmargin}      {2.5cm}    % was 0cm
+%    \setlength{\topmargin}	{-2.5cm}
+%    \setlength{\headheight}     {15\p@}     % was 12pt
+%    \setlength{\headheight}     {12pt}
+%    \setlength{\headsep}        {0.5cm}
+%    \setlength{\footskip}	{2.5cm}
+%    \setlength{\textwidth}      {14.5cm}    % was 15cm
+%    \setlength{\linewidth}      {14.5cm}    % was 15cm
+%    \setlength{\textheight}	{24.75cm}
+%    \setlength\@tempdima{\paperheight}
+%%    \addtolength\@tempdima{-35mm}  % top margin
+%    \addtolength\@tempdima{-65mm}
+%%    \addtolength\@tempdima{-25mm}  % bottom margin
+%
+%    \divide\@tempdima\baselineskip
+%    \@tempcnta=\@tempdima
+%    \setlength\textheight{\@tempcnta\baselineskip}
+%    \addtolength\textheight{\topskip}
+%    \setlength{\topskip}{1\topskip \@plus 1\baselineskip}
+%    \setlength{\parskip}{0pt}
+%    \raggedbottom
+}
+
+%-----------------------------------------------------------------------
+%  Reduce widow/orphan problems, mainly from a posting from Donald
+%  Arsenau on comp.text.tex, 24 Sep 1995.
+%  Updated to follow comments from Michael Downes on comp.text.tex,
+%  31 Aug 1998.
+%-----------------------------------------------------------------------
+\doublehyphendemerits=10000     % No consecutive line hyphens.
+\brokenpenalty=4991             % Reduce broken words across columns/pages.
+\widowpenalty=9999              % Almost no widows at bottom of page.
+\clubpenalty=9996               % Almost no orphans at top of page.
+\interfootnotelinepenalty=9999  % Almost never break footnotes.
+\predisplaypenalty=10000        % Default value
+\postdisplaypenalty=1549        % Few breaks between display and widows
+\displaywidowpenalty=1602       % At least as high as \postdisplaypenalty
+
+%-----------------------------------------------------------------------
+% Change float placement parameters to reduce problems.  Based on
+% values posted by Donald Arsenau on comp.text.tex at various times.
+% See in particular 17th Nov 1997.
+%-----------------------------------------------------------------------
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\renewcommand{\dbltopfraction}{.66}
+\renewcommand{\dblfloatpagefraction}{.66}
+\setcounter{topnumber}{9}
+\setcounter{bottomnumber}{9}
+\setcounter{totalnumber}{20}
+\setcounter{dbltopnumber}{9}
+
+%-----------------------------------------------------------------------
+% Re-define \cleardoublepage as recommended by Piet van Oostrum in the
+% documentation for fancyhdr.sty page 15.  This is to avoid blank pages
+% having headers or footers.
+%-----------------------------------------------------------------------
+\renewcommand{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
+   \thispagestyle{empty}
+   \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+%-----------------------------------------------------------------------
+% Number figures, tables and equations by chapter.  Re-define footnotes
+% and minipage footnotes to be single spaced.  Make new macros needed
+% for thesis definitions.
+%-----------------------------------------------------------------------
+\renewcommand{\thefigure}{\thechapter.\@arabic\c@figure}
+\renewcommand{\thetable}{\thechapter.\@arabic\c@table}
+\renewcommand{\theequation}{\thechapter.\@arabic\c@equation}
+
+% Re-define \@footnotetext and \@mpfootnotetext to use single spacing
+% rather than the space-and-a-half that is the default elsewhere.
+
+\renewcommand{\@footnotetext}[1]{\insert\footins{%
+    \linespread{1}\normalfont\footnotesize%
+    \interlinepenalty\interfootnotelinepenalty
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+    \protected@edef\@currentlabel{%
+      \csname p@footnote\endcsname\@thefnmark}%
+    \color@begingroup
+      \@makefntext{%
+        \rule\z@\footnotesep\ignorespaces#1\@finalstrut\strutbox}%
+    \color@endgroup}}
+
+\renewcommand{\@mpfootnotetext}[1]{%
+  \global\setbox\@mpfootins\vbox{%
+    \unvbox \@mpfootins
+    \linespread{1}\normalfont\footnotesize%
+    \hsize\columnwidth
+    \@parboxrestore
+    \protected@edef\@currentlabel{%
+      \csname p@mpfootnote\endcsname\@thefnmark}%
+    \color@begingroup
+      \@makefntext{%
+       \rule\z@\footnotesep\ignorespaces#1\@finalstrut\strutbox}%
+   \color@endgroup}}
+
+\renewcommand{\bibname}{References}
+
+\renewcommand{\title}[1]{\gdef\@title{#1}}
+\renewcommand{\author}[1]{\gdef\@author{#1}}
+\newcommand{\shorttitle}[1]{\gdef\@shorttitle{#1}}
+\newcommand{\authortitlepage}[1]{\gdef\@authortitlepage{#1}}
+\newcommand{\university}[1]{\gdef\@university{#1}}
+\newcommand{\school}[1]{\gdef\@school{#1}}
+\newcommand{\degreetype}[1]{\gdef\@degreetype{#1}}
+\newcommand{\submitdate}[1]{\gdef\@submitdate{#1}}
+\newcommand{\abbrev}[1]{\gdef\@abbrev{#1}}
+
+%\newcommand{\@submitdate}{\ifcase\the\month\or
+%  January\or February\or March\or April\or May\or June\or
+%  July\or August\or September\or October\or November\or December\fi
+%  \space \number\the\year}
+%\ifnum\month=12
+%    \@tempcnta=\year \advance\@tempcnta by 1
+%    \edef\@copyrightyear{\number\the\@tempcnta}
+%\else
+%    \newcommand{\@copyrightyear}{\number\the\year}
+
+\newcommand{\beginfm}{%
+	\renewcommand\bibname{References}
+	\begin{singlespace}
+}
+
+\newcommand{\finishfm}{%
+
+	\tableofcontents{}
+	\listoffigures{}
+	\end{singlespace}
+
+	\newpage
+	\pagenumbering{arabic}
+}
+
+%-----------------------------------------------------------------------
+% Title page definition
+%-----------------------------------------------------------------------
+\newcommand{\titlep}{
+
+	\let\cleardoublepage\clearpage % no new pages after end of chapter, etc.
+        \begin{titlepage}
+	\thispagestyle{empty}
+
+	\begin{singlespace}
+	\begin{center}
+
+  		\vspace*{\fill}
+
+                \rmfamily\Huge{\textbf{\expandafter{\@title}}}
+
+		\vskip3cm
+                \large{Thesis submitted by}
+                \vskip0.5cm
+                \rmfamily\Large{\textbf{\expandafter{\@authortitlepage}}}
+                \vskip0.5cm
+                \large{in \expandafter{\@submitdate}}
+
+                \vskip3cm
+                \rmfamily\large{for the degree of \expandafter{\@degreetype}}
+                \vskip0.3cm
+                \large{in the \expandafter{\@school}}
+                \vskip0.3cm
+                \large\textbf{\expandafter{\@university}}
+
+                \vskip3cm
+                \includegraphics[width=10cm]{figures/jcu_logo}
+
+		\vspace*{\fill}
+        \end{center}
+	\end{singlespace}
+    \end{titlepage}
+        \newpage
+}
+
+
+%-----------------------------------------------------------------------
+% Redefine \maketitle so as to make a JCU suitable title
+%-----------------------------------------------------------------------
+\renewcommand{\maketitle}{
+
+	\setpagesize
+	\pagenumbering{roman}
+	\newpage
+	\titlep
+        \raggedbottom
+
+    }
+
+%%%% Preamble Commands
+
+%% Hide List of Figures from the Table of Contents
+\DeclareRobustCommand{\SkipTocEntry}[4]{}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+EndPreamble

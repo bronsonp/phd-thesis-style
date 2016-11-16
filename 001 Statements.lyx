@@ -1,0 +1,411 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass JCUThesis
+\use_default_options true
+\master 000 Thesis.lyx
+\begin_modules
+theorems-ams
+theorems-ams-extended
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 2cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ifChapterOnly
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{preamble}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+COPYRIGHT © 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter
+\backslash
+MakeUppercase{
+\backslash
+@author}
+\backslash
+makeatother
+\end_layout
+
+\end_inset
+
+, 2014.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Some rights reserved.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+This work is licensed under Creative Commons Attribution–Noncommercial–No
+\begin_inset space ~
+\end_inset
+
+Derivative
+\begin_inset space ~
+\end_inset
+
+Works license.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://creativecommons.org/licenses/by-nc-nd/3.0/au/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Statement of Access
+\end_layout
+
+\begin_layout Standard
+I, the undersigned, the author of this thesis, understand the James Cook
+ University will make it available for use within the University Library
+ and, by microfilm or other means, allow access to users in other approved
+ libraries.
+ All users consulting with this thesis will have to sign the following statement
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+In consulting this thesis I agree not to copy or closely paraphrase it in
+ whole or in part without the written consent of the author; and to make
+ proper written acknowledgement for any assistance which I have obtained
+ from it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 10mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Beyond this, I do not wish to place any restriction on access to this thesis.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 10mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makebox[4.5cm]{
+\backslash
+hrulefill}
+\backslash
+makebox[4.5cm]{
+\backslash
+hfill}
+\backslash
+makebox[4.5cm]{
+\backslash
+hrulefill}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makebox[4.5cm]{
+\end_layout
+
+\end_inset
+
+(insert your name here)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makebox[4.5cm]{
+\backslash
+hfill}
+\backslash
+makebox[4.5cm]{Date}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Sources Declaration
+\end_layout
+
+\begin_layout Standard
+I declare that this thesis is my own work and has not been submitted in
+ any form for another degree or diploma at any university or other institute
+ of tertiary education.
+ Information derived from the published and unpublished work of others has
+ been acknowledged in the text and a list of references is given.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 10mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makebox[4.5cm]{
+\backslash
+hrulefill}
+\backslash
+makebox[4.5cm]{
+\backslash
+hfill}
+\backslash
+makebox[4.5cm]{
+\backslash
+hrulefill}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makebox[4.5cm]{
+\end_layout
+
+\end_inset
+
+(insert your name here)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makebox[4.5cm]{
+\backslash
+hfill}
+\backslash
+makebox[4.5cm]{Date}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
